@@ -1,7 +1,9 @@
-:root{
+:root{ 
     --blanco: #ffffff;
     --negro: #000000;
-    --rojo: #ff0000;
+    --rojo: #D62828;
+    --amarillo: #F4A261;
+    --marron: #3A2E2A;
 }
 
 body {
@@ -16,12 +18,14 @@ body {
     align-items: center;
 }
 
-
 /* Carrusel */
 .carrusel {
-    width: 100%;
+    width: 90%;
     height: 25%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
 }
 
 /* Imagenes */
@@ -43,36 +47,93 @@ body {
     object-fit: cover;
 }
 
- /* MENÚ HORIZONTAL */
-  .menu {
+/* MENÚ HORIZONTAL */
+.menu {
     background: #111;
-  }
+}
 
-  .menu ul {
+.menu ul {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
     justify-content: center;
-  }
+}
 
-  .menu li {
+.menu li {
     padding: 15px 25px;
-  }
+}
 
-  .menu a {
+.menu a {
     color: var(--blanco);
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
-  }
+}
 
-  .menu a:hover {
+.menu a:hover {
     color: var(--rojo);
-  }
+}
 
 .description{
-        margin-left: 10%;
+    margin-left: 10%;
     margin-right: 10%;
     background-color: var(--blanco);
+}
+
+
+/* 📱 MÓVIL (NO rompe PC) */
+@media (max-width: 768px) {
+
+    .header__info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header__info__name h1 {
+        font-size: 28px;
+    }
+
+    .carrusel {
+        width: 100%;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        padding: 10px 0;
+    }
+
+    .description {
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+    }
+}
+
+
+/* 📱 TABLET (suave, sin romper diseño) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .header__info__name h1 {
+        text-align: center;
+    }
+
+    .carrusel {
+        width: 95%;
+    }
+
+    .menu ul {
+        justify-content: center;
+    }
+
+    .description {
+        margin-left: 8%;
+        margin-right: 8%;
+        text-align: center;
+    }
 }
