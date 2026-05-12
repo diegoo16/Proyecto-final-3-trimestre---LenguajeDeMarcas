@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Productos | BurgerCRM</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <nav class="sidebar" id="sidebar">
+
+            <div class="sidebar__logo">
+                <div class="sidebar__logo-title">
+                    BurgerCRM
+                </div>
+
+                <div class="sidebar__logo-sub">
+                    Sistema de Gestión
+                </div>
+            </div>
+
+            <div class="sidebar__nav">
+
+                <a href="index.html" class="sidebar__nav-item">
+                    Dashboard
+                </a>
+
+                <a href="clientes.html" class="sidebar__nav-item">
+                    Clientes
+                </a>
+
+                <a href="productos.html" class="sidebar__nav-item sidebar__nav-item--active">
+                    Productos
+                </a>
+
+                <a href="usuarios.html" class="sidebar__nav-item">
+                    Usuarios
+                </a>
+
+                <a href="ventas.html" class="sidebar__nav-item">
+                    Ventas
+                </a>
+
+                <a href="detalle-venta.html" class="sidebar__nav-item">
+                    Detalle Venta
+                </a>
+
+            </div>
+
+            <div class="sidebar__footer">
+                BurgerCRM v1.0 · 1º DAM
+            </div>
+
+        </nav>
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar__left">
+
+                <button class="topbar__hamburger" onclick="toggleSidebar()">
+                    ☰
+                </button>
+
+                <h1 class="topbar__title">
+                    Productos
+                </h1>
+
+            </div>
+
+        </header>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <section class="page page--active">
+
+                <h1 class="page-title">
+                    Productos
+                </h1>
+
+                <!-- HEADER CRUD -->
+                <div class="crud-header">
+
+                    <div class="crud-header__search">
+
+                        <input type="text" class="input input--sm" placeholder="Buscar producto...">
+
+                    </div>
+
+                    <button class="btn btn--primary">
+                        + Nuevo Producto
+                    </button>
+
+                </div>
+
+                <!-- TABLA -->
+                <div class="table-wrap">
+
+                    <table class="table">
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Producto</th>
+                                <th>Descripción</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>#001</td>
+
+                                <td>
+                                    <strong>Burger Clásica</strong>
+                                </td>
+
+                                <td>
+                                    Hamburguesa con queso y salsa especial
+                                </td>
+
+                                <td>
+                                    <span class="badge badge--yellow">
+                                        Hamburguesa
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <strong>8.99€</strong>
+                                </td>
+
+                                <td>24</td>
+
+                                <td>
+
+                                    <div class="table__actions">
+
+                                        <button class="btn btn--edit btn--sm">
+                                            Editar
+                                        </button>
+
+                                        <button class="btn btn--delete btn--sm">
+                                            Eliminar
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>#002</td>
+
+                                <td>
+                                    <strong>Patatas Deluxe</strong>
+                                </td>
+
+                                <td>
+                                    Patatas crujientes con salsa BBQ
+                                </td>
+
+                                <td>
+                                    <span class="badge badge--green">
+                                        Complemento
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <strong>4.50€</strong>
+                                </td>
+
+                                <td>40</td>
+
+                                <td>
+
+                                    <div class="table__actions">
+
+                                        <button class="btn btn--edit btn--sm">
+                                            Editar
+                                        </button>
+
+                                        <button class="btn btn--delete btn--sm">
+                                            Eliminar
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>#003</td>
+
+                                <td>
+                                    <strong>Refresco XL</strong>
+                                </td>
+
+                                <td>
+                                    Bebida fría de gran tamaño
+                                </td>
+
+                                <td>
+                                    <span class="badge badge--blue">
+                                        Bebida
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <strong>2.99€</strong>
+                                </td>
+
+                                <td>58</td>
+
+                                <td>
+
+                                    <div class="table__actions">
+
+                                        <button class="btn btn--edit btn--sm">
+                                            Editar
+                                        </button>
+
+                                        <button class="btn btn--delete btn--sm">
+                                            Eliminar
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- SCRIPT MENU MOBILE -->
+    <script>
+
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("sidebar--open");
+        }
+
+    </script>
+
+</body>
+
+</html>

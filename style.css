@@ -36,7 +36,121 @@ body {
 
   overflow-x: hidden;
 }
+/* =========================================
+   SIDEBAR
+========================================= */
 
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  z-index: 100;
+  transition: transform var(--transition);
+}
+
+.sidebar__logo {
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar__logo-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+}
+
+.sidebar__logo-sub {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.sidebar__nav-item {
+  padding: 14px 24px;
+
+  color: var(--color-text-muted);
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  border-left: 3px solid transparent;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.sidebar__nav-item:hover {
+  background: var(--color-surface-2);
+  color: var(--color-accent);
+  border-left-color: var(--color-accent);
+}
+
+.sidebar__nav-item--active {
+  background: rgba(232,160,32,0.1);
+  color: var(--color-accent);
+  border-left-color: var(--color-accent);
+}
+
+.sidebar__footer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--color-border);
+
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+}
+
+/* =========================================
+   RESPONSIVE MENU
+========================================= */
+
+.topbar__hamburger {
+  display: none;
+}
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .topbar__hamburger {
+    display: block;
+
+    background: none;
+    border: none;
+
+    color: var(--color-text);
+
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+}
 /* =========================
    APP
 ========================= */
@@ -450,6 +564,38 @@ body {
   .btn {
     width: 100%;
     justify-content: center;
+  }
+
+}
+
+/* productos */
+
+.badge--yellow {
+  background: rgba(232,160,32,0.15);
+  border: 1px solid rgba(232,160,32,0.25);
+  color: var(--color-accent);
+}
+
+.badge--green {
+  background: rgba(76,175,125,0.15);
+  border: 1px solid rgba(76,175,125,0.25);
+  color: var(--color-green);
+}
+
+.badge--blue {
+  background: rgba(80,140,220,0.15);
+  border: 1px solid rgba(80,140,220,0.25);
+  color: #5a9fe0;
+}
+
+/* =========================================
+   RESPONSIVE PRODUCTOS
+========================================= */
+
+@media (max-width: 768px) {
+
+  .table {
+    min-width: 850px;
   }
 
 }
