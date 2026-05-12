@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clientes | BurgerCRM</title>
+
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <nav class="sidebar" id="sidebar">
+
+            <div class="sidebar__logo">
+                <div class="sidebar__logo-title">BurgerCRM</div>
+                <div class="sidebar__logo-sub">Sistema de Gestión</div>
+            </div>
+
+            <div class="sidebar__nav">
+
+                <a href="index.html" class="sidebar__nav-link">
+                    <div class="sidebar__nav-item">
+                        <p>Dashboard</p>
+                    </div>
+                </a>
+
+                <a href="clientes.html" class="sidebar__nav-link">
+                    <div class="sidebar__nav-item sidebar__nav-item--active">
+                        <p>Clientes</p>
+                    </div>
+                </a>
+
+                <a href="productos.html" class="sidebar__nav-link">
+                    <div class="sidebar__nav-item">
+                        <p>Productos</p>
+                    </div>
+                </a>
+
+                <a href="usuarios.html" class="sidebar__nav-link">
+                    <div class="sidebar__nav-item">
+                        <p>Usuarios</p>
+                    </div>
+                </a>
+
+                <a href="ventas.html" class="sidebar__nav-link">
+                    <div class="sidebar__nav-item">
+                        <p>Ventas</p>
+                    </div>
+                </a>
+
+                <a href="detalles.html" class="sidebar__nav-link">
+                    <div class="sidebar__nav-item">
+                        <p>Detalle Venta</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="sidebar__footer">
+                BurgerCRM v1.0 · 1º DAM
+            </div>
+
+        </nav>
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar__left">
+
+                <button class="topbar__hamburger" onclick="toggleSidebar()">
+                    ☰
+                </button>
+
+                <span class="topbar__title">
+                    Clientes
+                </span>
+
+            </div>
+
+        </header>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- HEADER -->
+            <div class="crud-header">
+
+                <input type="text" class="input" placeholder="Buscar cliente...">
+
+                <button class="btn btn--primary">
+                    + Nuevo Cliente
+                </button>
+
+            </div>
+
+            <!-- TABLA -->
+            <div class="table-wrap">
+
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>#1</td>
+                            <td>Carlos Rodríguez</td>
+                            <td>carlos@gmail.com</td>
+                            <td>600 111 222</td>
+                            <td>Madrid</td>
+
+                            <td class="table__actions">
+
+                                <button class="btn btn--edit">
+                                    Editar
+                                </button>
+
+                                <button class="btn btn--delete">
+                                    Eliminar
+                                </button>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#2</td>
+                            <td>Ana López</td>
+                            <td>ana@gmail.com</td>
+                            <td>611 333 444</td>
+                            <td>Barcelona</td>
+
+                            <td class="table__actions">
+
+                                <button class="btn btn--edit">
+                                    Editar
+                                </button>
+
+                                <button class="btn btn--delete">
+                                    Eliminar
+                                </button>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script>
+        const toggleSidebar = () => {
+            document.getElementById("sidebar").classList.toggle("sidebar--open");
+        };
+    </script>
+
+</body>
+
+</html>

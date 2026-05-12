@@ -157,6 +157,8 @@ body {
   font-size: 0.75rem;
 }
 
+/*index*/
+
 /* =========================
    TOPBAR
 ========================= */
@@ -323,4 +325,131 @@ body {
   .table {
     min-width: 600px;
   }
+}
+
+/*clientes*/
+
+/* =========================================
+   CLIENTES PAGE
+========================================= */
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: var(--color-accent);
+}
+
+.clientes-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 220px;
+}
+
+.search-box input {
+  width: 100%;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.table thead {
+  background: var(--color-surface-2);
+}
+
+.table th {
+  padding: 14px;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.table tbody tr {
+  transition: background var(--transition);
+}
+
+.table tbody tr:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.table__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn--edit {
+  background: rgba(232,160,32,0.15);
+  border: 1px solid rgba(232,160,32,0.25);
+  color: var(--color-accent);
+}
+
+.btn--edit:hover {
+  background: rgba(232,160,32,0.25);
+}
+
+.btn--delete {
+  background: rgba(217,79,56,0.12);
+  border: 1px solid rgba(217,79,56,0.25);
+  color: var(--color-red);
+}
+
+.btn--delete:hover {
+  background: rgba(217,79,56,0.22);
+}
+
+/* =========================================
+   RESPONSIVE CLIENTES
+========================================= */
+
+@media (max-width: 768px) {
+
+  .clientes-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table {
+    min-width: 700px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
 }
