@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BurgerCRM — Sistema de Gestión</title>
+    <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-title">BurgerCRM</div>
+      <div class="sidebar__logo-sub">Sistema de Gestión</div>
+    </div>
+
+    <div class="sidebar__nav">
+      <div class="sidebar__nav-item sidebar__nav-item--active" data-page="dashboard" onclick="navigateTo('dashboard', this)">
+        <span class="sidebar__nav-icon"></span> Dashboard
+      </div>
+
+      <div class="sidebar__nav-item" data-page="clientes" onclick="navigateTo('clientes', this)">
+        <span class="sidebar__nav-icon"></span> Clientes
+      </div>
+
+      <div class="sidebar__nav-item" data-page="productos" onclick="navigateTo('productos', this)">
+        <span class="sidebar__nav-icon"></span> Productos
+      </div>
+
+      <div class="sidebar__nav-item" data-page="usuarios" onclick="navigateTo('usuarios', this)">
+        <span class="sidebar__nav-icon"></span> Usuarios
+      </div>
+
+      <div class="sidebar__nav-item" data-page="ventas" onclick="navigateTo('ventas', this)">
+        <span class="sidebar__nav-icon"></span> Ventas
+      </div>
+
+      <div class="sidebar__nav-item" data-page="detalles" onclick="navigateTo('detalles', this)">
+        <span class="sidebar__nav-icon"></span> Detalle Venta
+      </div>
+    </div>
+
+    <div class="sidebar__footer">
+      BurgerCRM v1.0 · 1º DAM
+    </div>
+  </nav>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="topbar__hamburger" onclick="toggleSidebar()">☰</button>
+      <span class="topbar__title" id="topbar-title">Dashboard</span>
+    </div>
+
+    <div class="topbar__actions">
+      <span class="topbar__viewport-info" id="viewport-info">
+        1920 × 1080
+      </span>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- DASHBOARD -->
+    <section class="page page--active" id="page-dashboard">
+      <div class="dashboard__stats" id="dashboard-stats"></div>
+
+      <div class="dashboard__recent">
+        <h2 class="section-title">Últimas Ventas</h2>
+
+        <div class="table-wrap">
+          <table class="table" id="recent-ventas-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Comercial</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+
+            <tbody id="recent-ventas-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section class="page" id="page-clientes">
+      <div class="crud-header">
+
+        <div class="crud-header__search">
+          <input
+            type="text"
+            class="input input--sm"
+            placeholder="Buscar cliente..."
+            id="search-clientes"
+            oninput="renderClientes()"
+          >
+        </div>
+
+        <button class="btn btn--primary" onclick="openModal('cliente')">
+          + Nuevo Cliente
+        </button>
+
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+              <th>Dirección</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="clientes-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="page" id="page-productos">
+      <div class="crud-header">
+
+        <div class="crud-header__search">
+          <input
+            type="text"
+            class="input input--sm"
+            placeholder="Buscar producto..."
+            id="search-productos"
+            oninput="renderProductos()"
+          >
+        </div>
+
+        <button class="btn btn--primary" onclick="openModal('producto')">
+          + Nuevo Producto
+        </button>
+
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+              <th>Categoría</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="productos-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    
+  </main>
+</div>
+
+<!-- MODALES -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal">
+
+    <div class="modal__header">
+      <span class="modal__title" id="modal-title">Nuevo Registro</span>
+
+      <button class="modal__close" onclick="closeModal()">✕</button>
+    </div>
+
+    <div class="modal__body" id="modal-body"></div>
+
+    <div class="modal__footer">
+      <button class="btn btn--ghost" onclick="closeModal()">
+        Cancelar
+      </button>
+
+      <button class="btn btn--primary" id="modal-save-btn" onclick="saveModal()">
+        Guardar
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- JavaScript -->
+<script src="app.js"></script>
+
+</body>
+</html>
