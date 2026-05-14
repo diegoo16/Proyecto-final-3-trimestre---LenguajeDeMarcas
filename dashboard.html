@@ -29,40 +29,28 @@
 
       <div class="sidebar__nav">
 
-        <a href="index.html" class="sidebar__nav-link">
-          <div class="sidebar__nav-item sidebar__nav-item--active">
-            <p>Dashboard</p>
-          </div>
+        <a href="dashboard.html" class="sidebar__nav-item sidebar__nav-item--active">
+          Dashboard
         </a>
 
-        <a href="clientes.html" class="sidebar__nav-link">
-          <div class="sidebar__nav-item">
-            <p>Clientes</p>
-          </div>
+        <a href="clientes.html" class="sidebar__nav-item">
+          Clientes
         </a>
 
-        <a href="productos.html" class="sidebar__nav-link">
-          <div class="sidebar__nav-item">
-            <p>Productos</p>
-          </div>
+        <a href="productos.html" class="sidebar__nav-item">
+          Productos
         </a>
 
-        <a href="usuarios.html" class="sidebar__nav-link">
-          <div class="sidebar__nav-item">
-            <p>Usuarios</p>
-          </div>
+        <a href="usuarios.html" class="sidebar__nav-item">
+          Usuarios
         </a>
 
-        <a href="ventas.html" class="sidebar__nav-link">
-          <div class="sidebar__nav-item">
-            <p>Ventas</p>
-          </div>
+        <a href="ventas.html" class="sidebar__nav-item">
+          Ventas
         </a>
 
-        <a href="detalles.html" class="sidebar__nav-link">
-          <div class="sidebar__nav-item">
-            <p>Detalle Venta</p>
-          </div>
+        <a href="detalles.html" class="sidebar__nav-item">
+          Detalle Venta
         </a>
 
       </div>
@@ -82,9 +70,9 @@
           ☰
         </button>
 
-        <span class="topbar__title">
+        <h1 class="topbar__title">
           Dashboard
-        </span>
+        </h1>
 
       </div>
 
@@ -93,12 +81,15 @@
     <!-- MAIN -->
     <main class="main">
 
-      <!-- DASHBOARD -->
       <section class="page page--active">
 
-        <h2 class="section-title">
-          Últimas Ventas
-        </h2>
+        <!-- KPI CARDS -->
+        <div class="kpi-grid" id="kpiGrid">
+          <!-- Generado por index.js -->
+        </div>
+
+        <!-- ÚLTIMAS VENTAS -->
+        <h2 class="section-title">Últimas Ventas</h2>
 
         <div class="table-wrap">
 
@@ -108,33 +99,15 @@
               <tr>
                 <th>ID</th>
                 <th>Cliente</th>
-                <th>Comercial</th>
+                <th>Cajero</th>
                 <th>Fecha</th>
                 <th>Estado</th>
                 <th>Total</th>
               </tr>
             </thead>
 
-            <tbody>
-
-              <tr>
-                <td>#1</td>
-                <td>Carlos</td>
-                <td>Laura</td>
-                <td>12/05/2026</td>
-                <td>Completada</td>
-                <td>25€</td>
-              </tr>
-
-              <tr>
-                <td>#2</td>
-                <td>Ana</td>
-                <td>Pedro</td>
-                <td>11/05/2026</td>
-                <td>Pendiente</td>
-                <td>18€</td>
-              </tr>
-
+            <tbody id="tbodyVentas">
+              <!-- Generado por index.js -->
             </tbody>
 
           </table>
@@ -147,11 +120,7 @@
 
   </div>
 
-  <script>
-    const toggleSidebar = () => {
-      document.getElementById("sidebar").classList.toggle("sidebar--open");
-    };
-  </script>
+  <script src="js/dashboard.js"></script>
 
 </body>
 
