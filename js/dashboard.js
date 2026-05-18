@@ -86,15 +86,17 @@ function renderKPIs() {
     ];
 
     const grid = document.getElementById("kpiGrid");
-    grid.innerHTML = kpis.map(k => `
-        <div class="kpi-card">
-            <div class="kpi-card__icon">${k.icono}</div>
-            <div class="kpi-card__info">
-                <span class="kpi-card__label">${k.label}</span>
-                <span class="kpi-card__valor">${k.valor}</span>
+    if (grid) {
+        grid.innerHTML = kpis.map(k => `
+            <div class="kpi-card">
+                <div class="kpi-card__icon">${k.icono}</div>
+                <div class="kpi-card__info">
+                    <span class="kpi-card__label">${k.label}</span>
+                    <span class="kpi-card__valor">${k.valor}</span>
+                </div>
             </div>
-        </div>
-    `).join("");
+        `).join("");
+    }
 }
 
 // ===========================
@@ -102,6 +104,7 @@ function renderKPIs() {
 // ===========================
 function renderUltimasVentas() {
     const tbody = document.getElementById("tbodyVentas");
+    if (!tbody) return;
 
     // Mostrar las 5 más recientes (invertidas)
     const recientes = [...ventas].reverse();
@@ -122,11 +125,16 @@ function renderUltimasVentas() {
 //  SIDEBAR MOBILE
 // ===========================
 const toggleSidebar = () => {
-    document.getElementById("sidebar").classList.toggle("sidebar--open");
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar) {
+        sidebar.classList.toggle("sidebar--open");
+    }
 };
 
 // ===========================
 //  INIT
 // ===========================
-renderKPIs();
-renderUltimasVentas();
+document.addEventListener("DOMContentLoaded", () => {
+    renderKPIs();
+    renderUltimasVentas();
+});

@@ -325,16 +325,94 @@ body {
   cursor: pointer;
 }
 
-/* =========================
-   MAIN
-========================= */
+/* ==========================================================================
+   MAIN CONTENT & PAGES
+   ========================================================================== */
 .main {
+  padding: 2rem;
   flex: 1;
+  overflow-y: auto;
+}
 
-  margin-left: 240px;
-  margin-top: 70px;
+.page {
+  display: none;
+}
 
-  padding: 30px;
+.page--active {
+  display: block;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--color-text-main);
+}
+
+.card-section {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   KPI GRID SYSTEM (CAMBIADO A HORIZONTAL A LO LARGO DE LA PÁGINA)
+   ========================================================================== */
+.kpi-grid {
+  display: grid;
+  /* El auto-fit distribuye horizontalmente según el espacio disponible en pantalla */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.kpi-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.kpi-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.kpi-card__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-card__label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.kpi-card__valor {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-top: 0.15rem;
 }
 
 /* =========================
@@ -1691,10 +1769,6 @@ a {
         display: flex;
     }
 
-    .main {
-        margin-left: 0;
-        padding: 20px 16px;
-    }
 
     .crud-header {
         flex-direction: column;

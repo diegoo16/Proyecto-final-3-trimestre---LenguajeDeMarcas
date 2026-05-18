@@ -78,50 +78,33 @@
 
     </header>
 
-    <!-- MAIN -->
-    <main class="main">
+<!-- MAIN -->
+  <main class="main">
 
-      <section class="page page--active">
+    <div class="kpi-grid" id="kpiGrid"></div>
 
-        <!-- KPI CARDS -->
-        <div class="kpi-grid" id="kpiGrid">
-          <!-- Generado por index.js -->
-        </div>
+    <h2 class="section-title">Últimas Ventas</h2>
 
-        <!-- ÚLTIMAS VENTAS -->
-        <h2 class="section-title">Últimas Ventas</h2>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Cajero</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyVentas"></tbody>
+      </table>
+    </div>
 
-        <div class="table-wrap">
+  </main>
 
-          <table class="table">
+</div>
 
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Cliente</th>
-                <th>Cajero</th>
-                <th>Fecha</th>
-                <th>Estado</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-
-            <tbody id="tbodyVentas">
-              <!-- Generado por index.js -->
-            </tbody>
-
-          </table>
-
-        </div>
-
-      </section>
-
-    </main>
-
-  </div>
-
-  <script src="js/dashboard.js"></script>
-
+<script src="js/dashboard.js"></script>
 </body>
-
 </html>
